@@ -32,7 +32,7 @@ function formatResponse(text) {
 // ✅ Fetch transcript from FastAPI Python server
 async function fetchFullTranscript(videoId) {
     try {
-        const res = await fetch('http://localhost:9000/transcript', {
+        const res = await fetch('http://localhost:8000/transcript', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ videoId })
@@ -102,7 +102,7 @@ app.post('/chat/:videoId', async (req, res) => {
 });
 
 // ✅ Start server
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 9000;
 app.listen(PORT, () => {
     console.log(`✅ Server running at http://localhost:${PORT}`);
 });

@@ -139,7 +139,7 @@ const ContentPage = () => {
       setMessage((prev) => [...prev, userMessage]);
       setInputText("");
 
-      const response = await fetch(`http://localhost:8000/chat/${videoId}`, {
+      const response = await fetch(`http://localhost:9000/chat/${videoId}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
